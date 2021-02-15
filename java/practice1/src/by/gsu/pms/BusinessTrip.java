@@ -2,9 +2,9 @@ package by.gsu.pms;
 
 public class BusinessTrip {
     public final int RATE;
-    public String account;
-    public int transport;
-    public int days;
+    private String account;
+    private int transport;
+    private int days;
     public BusinessTrip(int rate) {
         super();
         RATE = rate;

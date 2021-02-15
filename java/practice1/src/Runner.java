@@ -19,8 +19,8 @@ public class Runner {
                 System.out.println("This is null item!\n-----------------");
             }
         }
-        trips[trips.length - 1].transport = 2000;
-        int duration = trips[0].days + trips[1].days;
+        trips[trips.length - 1].setTransport(2000);
+        int duration = trips[0].getDays() + trips[1].getDays();
         System.out.println("Duration = " + duration);
         for (int i = 0; i < trips.length; i++) {
             if (trips[i] != null) {
@@ -49,7 +49,7 @@ public class Runner {
         for (int i = 0; i < totalsList.length; i++) {
             if (totalsList[i] > maxTotal) {
                 maxTotal = totalsList[i];
-                accountNameWithMaxExpenses = trips[i].account;
+                accountNameWithMaxExpenses = trips[i].getAccount();
             }
         }
         System.out.println(accountNameWithMaxExpenses);
