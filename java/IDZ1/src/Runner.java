@@ -3,16 +3,16 @@ import by.gsu.pms.Icecream;
 public class Runner {
     public static void main(String[] args) {
         Icecream[] icecreamList = {
-            new Icecream(true, (float) 12.8),
-            new Icecream(false, (float) 16.1),
-            new Icecream(true, (float) 14.3),
-            new Icecream(false, (float) 18.5),
-            new Icecream(true, (float) 12.7),
-            new Icecream(true, (float) 9.1),
+            new Icecream("Yammy", true, (float) 12.8),
+            new Icecream("IceIce", false, (float) 16.1),
+            new Icecream("Morty", true, (float) 14.3),
+            new Icecream("Sinson", false, (float) 18.5),
+            new Icecream("Loji", true, (float) 12.7),
+            new Icecream("QoP", true, (float) 9.1),
             null,
-            new Icecream(true, (float) 8.1),
-            new Icecream(true, (float) 4.7),
-            new Icecream(true, (float) 19),
+            new Icecream("Dastar", true, (float) 8.1),
+            new Icecream("Farnos", true, (float) 4.7),
+            new Icecream("IceCity", true, (float) 19),
         };
 
         for (int i = 0; i < icecreamList.length; i++) {
