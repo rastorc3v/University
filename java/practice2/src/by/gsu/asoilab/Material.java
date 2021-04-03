@@ -2,7 +2,7 @@ package by.gsu.asoilab;
 
 public class Material {
     private String name;
-    private int density;
+    private float density;
 
     public Material() {
     }
@@ -20,11 +20,11 @@ public class Material {
         this.name = name;
     }
 
-    public int getDensity() {
+    public float getDensity() {
         return density;
     }
 
-    public void setDensity(int density) {
+    public void setDensity(float density) {
         this.density = density;
     }
 
