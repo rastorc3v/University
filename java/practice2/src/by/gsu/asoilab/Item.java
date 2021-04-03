@@ -21,8 +21,8 @@ public class Item {
         this.name = name;
     }
 
-    public String getMaterial() {
-        return material.toString();
+    public Material getMaterial() {
+        return material;
     }
 
     public void setMaterial(Material material) {
@@ -37,7 +37,7 @@ public class Item {
         this.volume = volume;
     }
 
-    private float getMass() {
+    public float getMass() {
         return volume * material.getDensity();
     }
 
