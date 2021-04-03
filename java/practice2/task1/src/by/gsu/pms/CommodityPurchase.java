@@ -38,4 +38,16 @@ public class CommodityPurchase {
         this.purchasedUnits = purchasedUnits;
     }
 
+    public float getCost() {
+        return commodityPrice * purchasedUnits;
+    }
+
+    @Override
+    public String toString() {
+        return commodityName + ';' + commodityPrice + ';' + purchasedUnits + ';' + getCost();
+    }
+
+    public Boolean equals(String name, float price) {
+        return commodityName.equals(name) && commodityPrice == price;
+    }
 }
