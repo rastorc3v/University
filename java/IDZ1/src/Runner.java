@@ -16,17 +16,18 @@ public class Runner {
         icecreamList.add(new Icecream("Farnos", true, (float) 4.7));
         icecreamList.add(new Icecream("IceCity", true, (float) 19));
 
+        // search for all null elements and delete before main algorithm starting
+        while (icecreamList.contains(null)) {
+            icecreamList.remove(null);
+        }
+
         for (Icecream icecream : icecreamList) {
-            if (icecream != null) {
-                System.out.println(icecream);
-            } else {
-                System.out.println("Empty icecream");
-            }
+            System.out.println(icecream);
         }
 
         int withChocolateCount = 0;
         for (Icecream icecream : icecreamList) {
-            if (icecream != null && icecream.isChocolate()) {
+            if (icecream.isChocolate()) {
                 withChocolateCount++;
             }
         }
@@ -35,10 +36,8 @@ public class Runner {
         float averageFatPercentage = 0;
         int validIcecreamsAmount = 0;
         for (Icecream icecream : icecreamList) {
-            if (icecream != null) {
-                averageFatPercentage += icecream.getFatPercentage();
-                validIcecreamsAmount++;
-            }
+            averageFatPercentage += icecream.getFatPercentage();
+            validIcecreamsAmount++;
         }
         if (validIcecreamsAmount != 0) {
             System.out.println("Average fat percentage - " + averageFatPercentage / validIcecreamsAmount);
