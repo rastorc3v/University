@@ -17,10 +17,21 @@ public class MoneyConverter {
     public String int2string(int moneyEquivalent) {
         int bigDenomination = moneyEquivalent / this.divider;
         int smallDenomination = moneyEquivalent % this.divider;
-        return bigDenomination + bigDenominationName + smallDenomination + smallDenominationName;
+        return resultPrettier(bigDenomination, smallDenomination);
     }
 
     public String float2string(float moneyEquivalent) {
         return "";
+    }
+
+    private String resultPrettier(int bigDenomination, int smallDenomination) {
+        String resultString = "";
+        if (bigDenomination != 0) {
+            resultString += bigDenomination + bigDenominationName;
+        }
+        if (smallDenomination != 0) {
+            resultString += smallDenomination + smallDenominationName;
+        }
+        return resultString;
     }
 }
