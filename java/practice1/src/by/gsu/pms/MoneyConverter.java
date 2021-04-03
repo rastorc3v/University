@@ -21,7 +21,16 @@ public class MoneyConverter {
     }
 
     public String float2string(float moneyEquivalent) {
-        return "";
+        String[] bigAndSmallDenomination = Float.toString(moneyEquivalent).split("\\.");
+        int bigDenomination = Integer.parseInt(bigAndSmallDenomination[0]);
+        if (bigAndSmallDenomination[1].length() > 2) {
+            bigAndSmallDenomination[1] = bigAndSmallDenomination[1].substring(0, 2);
+        }
+        if (bigAndSmallDenomination[1].length() == 1) {
+            bigAndSmallDenomination[1] += "0";
+        }
+        int smallDenomination = Integer.parseInt(bigAndSmallDenomination[1]);
+        return this.resultPrettier(bigDenomination, smallDenomination);
     }
 
     private String resultPrettier(int bigDenomination, int smallDenomination) {
