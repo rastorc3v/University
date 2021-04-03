@@ -4,6 +4,14 @@ public class Material {
     private String name;
     private int density;
 
+    public Material() {
+    }
+
+    public Material(String name, int density) {
+        this.name = name;
+        this.density = density;
+    }
+
     public String getName() {
         return name;
     }
