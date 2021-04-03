@@ -1,5 +1,6 @@
 import by.gsu.pms.BusinessTrip;
 import java.util.Objects;
+import by.gsu.pms.MoneyConverter;
 
 public class Runner {
     public static void main(String[] args) {
@@ -44,7 +45,9 @@ public class Runner {
             }
         }
 
-        System.out.println("Total sum = " + totalSum);
+        // use case of money converter class
+        MoneyConverter moneyConverter = new MoneyConverter();
+        System.out.println("Total sum = " + moneyConverter.int2string(totalSum));
 
         int[] totalsList = new int[trips.length];
 
