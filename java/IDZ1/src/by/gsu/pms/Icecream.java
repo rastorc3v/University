@@ -35,6 +35,6 @@ public class Icecream {
     public String getName() { return this.name; }
 
     public String toString() {
-        return "Is chocolate - " + isChocolate + " fat percentage - " + fatPercentage;
+        return "Name - " + name + "Is chocolate - " + isChocolate + " fat percentage - " + fatPercentage;
     }
 }
