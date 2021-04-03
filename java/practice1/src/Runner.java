@@ -57,8 +57,6 @@ public class Runner {
             }
         }
 
-        System.out.println(totalsList[2]);
-
         int maxTotal = 0;
         String accountNameWithMaxExpenses = "";
 
@@ -69,6 +67,6 @@ public class Runner {
             }
         }
 
-        System.out.println(accountNameWithMaxExpenses);
+        System.out.println("Account name with max expenses" + accountNameWithMaxExpenses);
     }
 }
