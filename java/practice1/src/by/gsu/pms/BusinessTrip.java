@@ -5,10 +5,12 @@ public class BusinessTrip {
     private String account;
     private int transport;
     private int days;
+
     public BusinessTrip(int rate) {
         super();
         RATE = rate;
     }
+
     public BusinessTrip(int RATE, String account, int transport, int days) {
         super();
         this.RATE = RATE;
@@ -16,15 +18,9 @@ public class BusinessTrip {
         this.transport = transport;
         this.days = days;
     }
+
     public String getAccount() {
         return this.account;
-    }
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public int getTransport() {
-        return transport;
     }
 
     public void setTransport(int transport) {
@@ -35,17 +31,10 @@ public class BusinessTrip {
         return days;
     }
 
-    public void setDays(int days) {
-        this.days = days;
-    }
-
-    public int getRATE() {
-        return RATE;
-    }
-
     public int getTotal () {
         return RATE * days + transport;
     }
+
     public void show() {
         System.out.println("rate = " + RATE +
                 "\naccount = " + account +
@@ -53,6 +42,7 @@ public class BusinessTrip {
                 "\ndays = " + days +
                 "\ntotal = " + getTotal());
     }
+
     public String toString() {
         return this.RATE + ";" + this.account + ';' + this.transport + ';' + this.days + ';' + getTotal();
     }
