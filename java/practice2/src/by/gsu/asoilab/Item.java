@@ -1,18 +1,13 @@
 package by.gsu.asoilab;
 
-public class Item extends Material {
+public class Item {
     private String name;
-    private String material;
+    private Material material;
     private float volume;
 
-    public Item(String name, String material, float volume) {
-        this.name = name;
-        this.material = material;
-        this.volume = volume;
-    }
+    public Item() { }
 
-    public Item(int density, String name, String material, float volume) {
-        super(material, density);
+    public Item(String name, Material material, float volume) {
         this.name = name;
         this.material = material;
         this.volume = volume;
@@ -27,10 +22,10 @@ public class Item extends Material {
     }
 
     public String getMaterial() {
-        return material;
+        return material.toString();
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
@@ -43,11 +38,11 @@ public class Item extends Material {
     }
 
     private float getMass() {
-        return volume * getDensity();
+        return volume * material.getDensity();
     }
 
     @Override
     public String toString() {
-        return name + ';' + super.toString() + ';' + volume + ';' + getMass();
+        return name + ';' + material.toString() + ';' + volume + ';' + getMass();
     }
 }
