@@ -25,6 +25,7 @@ public class Runner {
             System.out.println(icecream);
         }
 
+        // find amount of non-chocolate icecream
         int withChocolateCount = 0;
         for (Icecream icecream : icecreamList) {
             if (icecream.isChocolate()) {
@@ -33,6 +34,7 @@ public class Runner {
         }
         System.out.println("Amount of chocolate icecream - " + withChocolateCount);
 
+        // calculate average fat percentage
         float averageFatPercentage = 0;
         int validIcecreamsAmount = 0;
         for (Icecream icecream : icecreamList) {
@@ -41,6 +43,20 @@ public class Runner {
         }
         if (validIcecreamsAmount != 0) {
             System.out.println("Average fat percentage - " + averageFatPercentage / validIcecreamsAmount);
+        }
+
+        // sort by fat percentage
+        for(int i = icecreamList.size() - 1; i > 0; i--){
+            for(int j = 0; j < i; j++){
+                if(icecreamList.get(j).getFatPercentage() > icecreamList.get(j + 1).getFatPercentage()){
+                    Icecream tempIcecreamObject = icecreamList.get(j);
+                    icecreamList.set(j, icecreamList.get(j + 1));
+                    icecreamList.set(j + 1, tempIcecreamObject);
+                }
+            }
+        }
+        for (Icecream icecream: icecreamList) {
+            System.out.println(icecream);
         }
     }
 }
