@@ -23,28 +23,12 @@ public class BusinessTrip {
         return this.account;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public int getTransport() {
-        return transport;
-    }
-
     public void setTransport(int transport) {
         this.transport = transport;
     }
 
     public int getDays() {
         return days;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
-    }
-
-    public int getRATE() {
-        return RATE;
     }
 
     public int getTotal () {
