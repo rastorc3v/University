@@ -25,6 +25,9 @@ public class Runner {
             System.out.println(icecream);
         }
 
+        // print separation line
+        System.out.println("-------------------------");
+
         // find amount of non-chocolate icecream
         int withChocolateCount = 0;
         for (Icecream icecream : icecreamList) {
@@ -45,6 +48,9 @@ public class Runner {
             System.out.println("Average fat percentage - " + averageFatPercentage / validIcecreamsAmount);
         }
 
+        // print separation line
+        System.out.println("-------------------------\nSort by fat percentage");
+
         // sort by fat percentage
         for(int i = icecreamList.size() - 1; i > 0; i--){
             for(int j = 0; j < i; j++){
@@ -55,6 +61,24 @@ public class Runner {
                 }
             }
         }
+        for (Icecream icecream: icecreamList) {
+            System.out.println(icecream);
+        }
+
+        // print separation line
+        System.out.println("-------------------------\nSort by name");
+
+        // sort by fat percentage
+        for(int i = icecreamList.size() - 1; i > 0; i--){
+            for(int j = 0; j < i; j++){
+                if(icecreamList.get(j).getName().compareTo(icecreamList.get(j + 1).getName()) > 0) {
+                    Icecream tempIcecreamObject = icecreamList.get(j);
+                    icecreamList.set(j, icecreamList.get(j + 1));
+                    icecreamList.set(j + 1, tempIcecreamObject);
+                }
+            }
+        }
+
         for (Icecream icecream: icecreamList) {
             System.out.println(icecream);
         }
