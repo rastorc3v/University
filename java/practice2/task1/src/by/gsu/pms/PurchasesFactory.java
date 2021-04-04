@@ -8,26 +8,25 @@ public class PurchasesFactory {
         DYNAMIC_DISCOUNT_PURCHASE
     }
 
-    @SuppressWarnings("unchecked")
-    public <T> T getClassFromFactory(Scanner sc) {
+    public CommodityPurchase getClassFromFactory(Scanner sc) {
         String[] purchaseInfo = sc.next().split(" ");
         PurchasesKinds kind = PurchasesKinds.valueOf(purchaseInfo[0]);
         switch (kind) {
             case GENERAL_PURCHASE :
-                return (T) new CommodityPurchase(
+                return  new CommodityPurchase(
                         purchaseInfo[1],
                         Float.parseFloat(purchaseInfo[2]),
                         Integer.parseInt(purchaseInfo[3])
                 );
             case GENERAL_DISCOUNT_PURCHASE:
-                return (T) new GeneralDiscountCommodityPurchase(
+                return new GeneralDiscountCommodityPurchase(
                         purchaseInfo[1],
                         Float.parseFloat(purchaseInfo[2]),
                         Integer.parseInt(purchaseInfo[3]),
                         Integer.parseInt(purchaseInfo[4])
                 );
             case DYNAMIC_DISCOUNT_PURCHASE:
-                return (T) new DynamicDiscountCommodityPurchase(
+                return new DynamicDiscountCommodityPurchase(
                         purchaseInfo[1],
                         Float.parseFloat(purchaseInfo[2]),
                         Integer.parseInt(purchaseInfo[3]),
