@@ -47,7 +47,10 @@ public class CommodityPurchase {
         return commodityName + ';' + commodityPrice + ';' + purchasedUnits + ';' + getCost();
     }
 
-    public Boolean equals(String name, float price) {
-        return commodityName.equals(name) && commodityPrice == price;
+    @Override
+    public boolean equals(Object commodityPurchase) {
+        CommodityPurchase o = (CommodityPurchase) commodityPurchase;
+        assert o != null;
+        return commodityName.equals( o.commodityName) && commodityPrice == o.commodityPrice;
     }
 }
