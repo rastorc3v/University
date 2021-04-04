@@ -1,14 +1,23 @@
 package by.gsu.pms;
 
 public class GeneralDiscountCommodityPurchase extends CommodityPurchase {
-    static final int DISCOUNT = 50;
+    private int discount = 50;
 
-    public GeneralDiscountCommodityPurchase(String commodityName, float commodityPrice, int purchasedUnits) {
+    public GeneralDiscountCommodityPurchase(String commodityName, float commodityPrice, int purchasedUnits, int discount) {
         super(commodityName, commodityPrice, purchasedUnits);
+        this.discount = discount;
+    }
+
+    public int getDISCOUNT() {
+        return discount;
+    }
+
+    public void setDISCOUNT(int discount) {
+        this.discount = discount;
     }
 
     @Override
     public float getCost() {
-        return (getCommodityPrice() - DISCOUNT) * getPurchasedUnits();
+        return (getCommodityPrice() - discount) * getPurchasedUnits();
     }
 }
