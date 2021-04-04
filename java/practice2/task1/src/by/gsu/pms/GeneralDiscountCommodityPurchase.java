@@ -7,10 +7,6 @@ public class GeneralDiscountCommodityPurchase extends CommodityPurchase {
         super(commodityName, commodityPrice, purchasedUnits);
     }
 
-    public float getDiscount() {
-        return DISCOUNT;
-    }
-
     @Override
     public float getCost() {
         return (getCommodityPrice() - DISCOUNT) * getPurchasedUnits();
