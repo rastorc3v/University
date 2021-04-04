@@ -10,17 +10,29 @@ public class PurchasesFactory {
 
     @SuppressWarnings("unchecked")
     public <T> T getClassFromFactory(Scanner sc) {
-        String id = sc.next();
-        PurchasesKinds kind = PurchasesKinds.valueOf(id);
+        String[] purchaseInfo = sc.next().split(" ");
+        PurchasesKinds kind = PurchasesKinds.valueOf(purchaseInfo[0]);
         switch (kind) {
             case GENERAL_PURCHASE :
-                return (T) new CommodityPurchase();
-//            case GENERAL_DISCOUNT_PURCHASE:
-//                return (T) new GeneralDiscountCommodityPurchase();
-//                break;
-//            case DYNAMIC_DISCOUNT_PURCHASE:
-//                return (T) new DynamicDiscountCommodityPurchase();
-//                break;
+                return (T) new CommodityPurchase(
+                        purchaseInfo[1],
+                        Float.parseFloat(purchaseInfo[2]),
+                        Integer.parseInt(purchaseInfo[3])
+                );
+            case GENERAL_DISCOUNT_PURCHASE:
+                return (T) new GeneralDiscountCommodityPurchase(
+                        purchaseInfo[1],
+                        Float.parseFloat(purchaseInfo[2]),
+                        Integer.parseInt(purchaseInfo[3]),
+                        Integer.parseInt(purchaseInfo[4])
+                );
+            case DYNAMIC_DISCOUNT_PURCHASE:
+                return (T) new DynamicDiscountCommodityPurchase(
+                        purchaseInfo[1],
+                        Float.parseFloat(purchaseInfo[2]),
+                        Integer.parseInt(purchaseInfo[3]),
+                        Integer.parseInt(purchaseInfo[4])
+                );
             default:
                 System.out.println("Error in purchase type in src/in.txt. Take " + kind);
                 break;
