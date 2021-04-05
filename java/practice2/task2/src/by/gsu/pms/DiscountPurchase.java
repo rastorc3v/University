@@ -8,6 +8,14 @@ public class DiscountPurchase extends AbstractPurchase {
         this.discount = discount;
     }
 
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(float discount) {
+        this.discount = discount;
+    }
+
     @Override
     public float getCost() {
         return (getCommodity().getPrice() - discount) * getPurchaseUnits();
