@@ -4,6 +4,14 @@ public abstract class AbstractPurchase implements Comparable<AbstractPurchase> {
     private Commodity commodity;
     private int purchaseUnits;
 
+    public AbstractPurchase() {
+    }
+
+    public AbstractPurchase(Commodity commodity, int purchaseUnits) {
+        this.commodity = commodity;
+        this.purchaseUnits = purchaseUnits;
+    }
+
     public Commodity getCommodity() {
         return commodity;
     }
