@@ -8,6 +8,14 @@ public class PercentDiscountPurchase extends AbstractPurchase {
         this.discountPercent = discountPercent;
     }
 
+    public float getDiscountPercent() {
+        return discountPercent;
+    }
+
+    public void setDiscountPercent(float discountPercent) {
+        this.discountPercent = discountPercent;
+    }
+
     @Override
     public float getCost() {
         return getCommodity().getPrice() * getPurchaseUnits() * (1 - discountPercent/100);
